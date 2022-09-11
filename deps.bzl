@@ -73,32 +73,3 @@ swift_library(
 )
 """,
     )
-
-    # maybe(
-    #     github_source_archive,
-    #     name = "apple_swift_argument_parser",
-    #     repo = "apple/swift-argument-parser",
-    #     version = "1.0.3",
-    #     sha256 = "a4d4c08cf280615fe6e00752ef60e28e76f07c25eb4706a9269bf38135cd9c3f",
-    #     build_file_content = """
-
-# load("//build/swift:swift_library.bzl", "swift_library")
-
-# swift_library(
-# name = "ArgumentParserToolInfo",
-# srcs = glob("Sources/ArgumentParserToolInfo/**/*.swift"),
-# module_name = "ArgumentParserToolInfo",
-# visibility = ["//visibility:public"],
-# )
-
-# swift_library(
-# name = "ArgumentParser",
-# srcs = glob("Sources/ArgumentParserToolInfo/**/*.swift"),
-# module_name = "ArgumentParser",
-# visibility = ["//visibility:public"],
-# deps = [
-#     ":ArgumentParserToolInfo",
-# ]
-# )
-# """,
-# )
