@@ -1,0 +1,13 @@
+load("@cgrindel_bazel_starlib//bzlformat:defs.bzl", "bzlformat_pkg")
+
+bzlformat_pkg(name = "bzlformat")
+
+sh_test(
+    name = "no_cmd_test",
+    srcs = ["no_cmd_test.sh"],
+    data = ["//Sources/SPMBazel"],
+    deps = [
+        "@bazel_tools//tools/bash/runfiles",
+        "@cgrindel_bazel_starlib//shlib/lib:assertions",
+    ],
+)

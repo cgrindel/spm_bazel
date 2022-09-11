@@ -6,7 +6,7 @@ bzlformat_pkg(name = "bzlformat")
 swift_binary(
     name = "SPMBazel",
     module_name = "SPMBazel",
-    visibility = ["//swift:__subpackages__"],
+    visibility = ["//visibility:public"],
     deps = [
         "@apple_swift_argument_parser//:ArgumentParser",
     ],
