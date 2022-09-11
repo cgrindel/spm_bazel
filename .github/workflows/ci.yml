@@ -22,7 +22,7 @@ jobs:
         repo_name: spm_bazel
     - uses: maxim-lobanov/setup-xcode@v1
       with:
-        xcode-version: '13.4.1'
+        xcode-version: latest-stable
     - uses: ./.github/actions/build_and_test
 
   ubuntu_build:
