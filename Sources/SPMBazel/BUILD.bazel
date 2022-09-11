@@ -4,7 +4,7 @@ load("//build/swift:swift.bzl", "swift_binary")
 bzlformat_pkg(name = "bzlformat")
 
 swift_binary(
-    name = "SPMBazel",
+    name = "spm_bazel",
     module_name = "SPMBazel",
     visibility = ["//visibility:public"],
     deps = [

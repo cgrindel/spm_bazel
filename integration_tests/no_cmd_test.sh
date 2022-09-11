@@ -22,7 +22,7 @@ source "${assertions_sh}"
 
 # Variables
 
-spm_bazel_location=cgrindel_spm_bazel/Sources/SPMBazel/SPMBazel
+spm_bazel_location=cgrindel_spm_bazel/Sources/SPMBazel/spm_bazel
 spm_bazel="$(rlocation "${spm_bazel_location}")" || \
   (echo >&2 "Failed to locate ${spm_bazel_location}" && exit 1)
 
