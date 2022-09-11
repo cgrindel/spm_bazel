@@ -1,0 +1,13 @@
+load("@cgrindel_bazel_starlib//bzlformat:defs.bzl", "bzlformat_pkg")
+load("//build/swift:swift.bzl", "swift_binary")
+
+bzlformat_pkg(name = "bzlformat")
+
+swift_binary(
+    name = "spm_bazel",
+    module_name = "SPMBazel",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@apple_swift_argument_parser//:ArgumentParser",
+    ],
+)

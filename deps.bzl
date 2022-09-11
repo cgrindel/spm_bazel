@@ -1,7 +1,10 @@
+"""Dependencies for spm_bazel"""
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 load("@bazel_tools//tools/build_defs/repo:utils.bzl", "maybe")
 
 def spm_bazel_dependencies():
+    """Defines the dependencies for spm_bazel."""
     maybe(
         http_archive,
         name = "build_bazel_rules_swift",
@@ -41,4 +44,32 @@ def spm_bazel_dependencies():
         urls = [
             "http://github.com/bazelbuild/rules_cc/archive/cb6d32e4d1ae29e20dd3328109d8cb7f8eccc9be.tar.gz",
         ],
+    )
+
+    maybe(
+        http_archive,
+        name = "apple_swift_argument_parser",
+        strip_prefix = "swift-argument-parser-1.0.3",
+        urls = ["https://github.com/apple/swift-argument-parser/archive/1.0.3.tar.gz"],
+        sha256 = "a4d4c08cf280615fe6e00752ef60e28e76f07c25eb4706a9269bf38135cd9c3f",
+        build_file_content = """
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "ArgumentParserToolInfo",
+    srcs = glob(["Sources/ArgumentParserToolInfo/**/*.swift"]),
+    module_name = "ArgumentParserToolInfo",
+    visibility = ["//visibility:public"],
+)
+
+swift_library(
+    name = "ArgumentParser",
+    srcs = glob(["Sources/ArgumentParser/**/*.swift"]),
+    module_name = "ArgumentParser",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":ArgumentParserToolInfo",
+    ]
+)
+""",
     )
