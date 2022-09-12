@@ -10,7 +10,7 @@ on:
 jobs:
 
   macos_build:
-    runs-on: macos-11.0
+    runs-on: macos-latest
     # # GH112: Remove the use of a custom Bazel when Keith's patch is merged and 
     # # released.
     # env:
@@ -26,7 +26,7 @@ jobs:
     - uses: ./.github/actions/build_and_test
 
   ubuntu_build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     env:
       CC: clang
     steps:
