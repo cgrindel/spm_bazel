@@ -1,7 +1,6 @@
 import ArgumentParser
 import Foundation
 
-@main
 struct SPMBazel: AsyncParsableCommand {
   mutating func runAsync() async throws {
     guard let output = "Hello, World!".data(using: .utf8) else {
