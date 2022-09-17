@@ -28,6 +28,6 @@ spm_bazel="$(rlocation "${spm_bazel_location}")" || \
 
 # Tests
 
-# Ensure that the help text is rendered
+# Ensure that the hello world text is rendered
 output="$($spm_bazel)"
 assert_match "Hello, World!" "${output}"
