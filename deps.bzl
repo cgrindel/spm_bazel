@@ -49,9 +49,9 @@ def spm_bazel_dependencies():
     maybe(
         http_archive,
         name = "apple_swift_argument_parser",
-        strip_prefix = "swift-argument-parser-1.1.4",
-        urls = ["https://github.com/apple/swift-argument-parser/archive/1.1.4.tar.gz"],
-        sha256 = "ab15b9a1a6c916f44fbeb2e644771254c2886a34b0092030b46b649ad692512a",
+        strip_prefix = "swift-argument-parser-1.2.0",
+        urls = ["https://github.com/apple/swift-argument-parser/archive/1.2.0.tar.gz"],
+        sha256 = "f2c3a7f20e6dede610e7bd7e6cc9e352df54070769bc5b7f5d4bb2868e3c10ae",
         build_file_content = """
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 
